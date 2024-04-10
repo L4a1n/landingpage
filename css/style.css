@@ -1,0 +1,17 @@
+body{
+  font-family: Anonymous Pro;
+  line-height: 1.5;
+}
+
+@media(min-width: 40em){
+ .blob{
+   display: grid;
+   grid-template-columns: 65%;
+   grid-gap: 1em;
+ }
+}
+
+h1{
+  border-bottom: 1px solid #ffffff;
+  font-size: 1.6em;
+}
