@@ -3,12 +3,21 @@ body{
   line-height: 1.5;
 }
 
-@media(min-width: 40em){
+@media(min-width: 1px){
  .blob{
    display: grid;
-   grid-template-columns: 65%;
+   grid-template-columns: auto;
    grid-gap: 1em;
+   width: 100%;
  }
+}
+
+.block-conten{
+  box-sizing: border-box;
+}
+
+.block-menu{
+  box-sizing: border-box;
 }
 
 h1{
