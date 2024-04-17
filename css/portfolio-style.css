@@ -46,6 +46,9 @@ color: #446660;
   position: fixed;
   left: 70%;
 }
+.block-menu h1{
+  color: #54ab8e;
+}
 
 .block-content h1{
   color: #54ab8e;
