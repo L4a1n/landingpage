@@ -1,20 +1,29 @@
+@font-face {
+    font-family: 'Anonymous Pro';
+    src: url(../font/AnonymousPro.ttf);
+}
 html{
   scroll-behavior: smooth;
 }
-
 body{
-  font-family: Anonymous Pro;
+  font-family: 'Anonymous Pro';
   line-height: 1.5em;
+  background-color: #0a0d0c;
 }
-
 footer{
-  border-top: 1px solid #000;
+  border-top: 1px solid #54ab8e;
 }
-
+footer p{
+color: #446660;
+}
 .header{
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #54ab8e;
+  padding-left: 2em;
 }
-
+.header a{
+  text-decoration: none;
+  color: #54ab8e;
+}
 @media(min-width: 1px){
  .blob{
    display: grid;
@@ -23,6 +32,9 @@ footer{
    margin: 2em;
    margin-top: 4em;
  }
+}
+.blob p{
+  color: #446660
 }
 
 .block-content{
@@ -36,34 +48,36 @@ footer{
 }
 
 .block-content h1{
-  border-bottom: 1px solid #111111;
+  color: #54ab8e;
+  border-bottom: 1px solid #54ab8e;
   font-size: 1.8em;
-  box-shadow: 0 4px 6px -6px #b44444;
+  box-shadow: 0 4px 6px -6px #54ab8e;
 }
 
 .block-content h2{
-  border-bottom: 1px dashed #111111;
+  color: #54ab8e;
+  border-bottom: 1px dashed #54ab8e;
   font-size: 1.3em;
-  box-shadow: 0 4px 6px -6px #b44444;
+  box-shadow: 0 4px 6px -6px #54ab8e;
 }
 
-a {
-color: #111;
-position: relative;
-text-decoration: none;
-transition: color .4s ease-out;
+.blob a {
+  color: #99d1c2;
+  position: relative;
+  text-decoration: none;
+  transition: color .4s ease-out;
 }
-a:hover {
-    color: #111;
+.blob a:hover {
+    color: #54ab8e;
     text-decoration: none;
 }
-a:hover::after {
-    border-color: #111;
+.blob a:hover::after {
+    border-color: #54ab8e;
     right: 0;
 }
-a::after {
+.blob a::after {
     border-radius: 1em;
-    border-top: .1em solid #111;
+    border-top: .1em solid #54ab8e;
     content: "";
     position: absolute;
     right: 100%;
@@ -72,3 +86,5 @@ a::after {
     transition: right .4s cubic-bezier(0,.5,0,1),
     border-color .4s ease-out;
 }
+
+

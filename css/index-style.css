@@ -13,9 +13,16 @@ body{
 footer{
   border-top: 1px solid #54ab8e;
 }
+footer p{
+color: #446660;
+}
 .header {
   border-bottom: 1px solid #54ab8e;
   padding-left: 2em;
+}
+.header a{
+  text-decoration: none;
+  color: #54ab8e;
 }
 @media(min-width: 1px){
  .blob{
@@ -24,23 +31,14 @@ footer{
    margin: 4em;
  }
 }
+.blob p{
+  color: #446660
+}
 @media(min-width: 400px){
   .foo{
     box-sizing: border-box;
     margin: 6em;
   }
-}
-h1{
-  color: #54ab8e;
-}
-p{
-  color: #446660;
-}
-a {
-  color: #99d1c2;
-  position: relative;
-  text-decoration: none;
-  transition: color .4s ease-out;
 }
 
 .tmp{
@@ -93,16 +91,21 @@ a {
   opacity: 1;
 }
 
-
-a:hover {
+.blob a {
+  color: #99d1c2;
+  position: relative;
+  text-decoration: none;
+  transition: color .4s ease-out;
+}
+.blob a:hover {
     color: #54ab8e;
     text-decoration: none;
 }
-a:hover::after {
+.blob a:hover::after {
     border-color: #54ab8e;
     right: 0;
 }
-a::after {
+.blob a::after {
     border-radius: 1em;
     border-top: .1em solid #54ab8e;
     content: "";
