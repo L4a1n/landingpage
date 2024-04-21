@@ -89,9 +89,24 @@ color: #446660;
     transition: right .4s cubic-bezier(0,.5,0,1),
     border-color .4s ease-out;
 }
+.block-content img{
+  width: 70%;
+  height: auto;
+}
 li{
   list-style-type: ">";
   color: #54ab8e;
 }
-
+.spacer1 {
+    height: 10vw;
+    width: max-content;
+}
+.spacer2 {
+    height: 5vw;
+    width: max-content;
+}
+.spacer3 {
+    height: 2vw;
+    width: max-content;
+}
 
