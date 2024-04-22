@@ -43,8 +43,13 @@ color: #446660;
 
 .block-menu{
   box-sizing: border-box;
-  position: fixed;
-  left: 70%;
+  position: sticky;
+  margin: 1em;
+  top: 1vw;
+  left: 60%;
+  overflow: scroll;
+  height: 400px;
+
 }
 .block-menu h1{
   color: #54ab8e;

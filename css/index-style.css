@@ -56,6 +56,7 @@ color: #446660;
   position: absolute;
   bottom: 30%;
   left: 0;
+  text-shadow: #000 1px 0 20px;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -98,16 +99,16 @@ color: #446660;
   transition: color .4s ease-out;
 }
 .blob a:hover {
-    color: #54ab8e;
+    color: #adeddc;
     text-decoration: none;
 }
 .blob a:hover::after {
-    border-color: #54ab8e;
+    border-color: #adeddc;
     right: 0;
 }
 .blob a::after {
     border-radius: 1em;
-    border-top: .1em solid #54ab8e;
+    border-top: .1em solid #adeddc;
     content: "";
     position: absolute;
     right: 100%;
