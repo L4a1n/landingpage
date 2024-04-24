@@ -114,4 +114,17 @@ li{
     height: 2vw;
     width: max-content;
 }
-
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 2em;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #54ab8e;
+    cursor: pointer;
+    border: none;
+}
+#back-to-top:hover {
+    background-color: #7bad9d;
+}
