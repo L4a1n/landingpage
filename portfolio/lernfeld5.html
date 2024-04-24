@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <button id="back-to-top" onclick="scrollToTop()"></button>
     <div class="header">
       <h1><a href="../index.html">Lainspace</a></h1>
     </div>
@@ -17,22 +18,106 @@
     <div class="blob">
 
       <div class="block-content">
-        <h1>
-          Block-Content
-        </h1>
+        <div class="spacer3">
+          
+        </div>
+        <h1>Lernfeld 5</h1>
         <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-        <h2>
-          Sub-Block-Content
-        </h2>
+        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+        <div class="spacer1">
+          
+        </div>
+        <h1 id="pt">Projekt - Thermostat</h1>
+        <p>Projektarbeit von Philip Cander, Serkan Cengiz, Roman Maznov</p>
+        <p>Die Aufgabe besteht darin eine Klimabox mithilfe von Microcontroller Arduino zu programmieren. Dabei sollen die Parameter “Temperatur” und “Luftfeuchtigkeit” als Prototyp für ein Kundengespräch simuliert werden.</p>
+        <p>Diese elektronischen Komponenten stehen zur Verfügung:</p>
+        
+        <ul>
+          <li>1 x Arduino Uno</li>
+          <li>1 x Sensor DHT 11/22</li>
+          <li>4 x LED (gelb, blau, grün, rot)</li>
+          <li>2 x Taster</li>
+          <li>1 x Drehpegler (Potentiometer 10KOhm, KEIN Inkrementalgeber)</li>
+          <li>1 x LCD1602 (zweizeiliges Display, an I2C-Bus angeschlossen)</li>
+        </ul>
+        <p>Der Sensor DHT11/22 kann die Messwerte (Temperatur, Luftfeuchtigkeit) erfassen, in Variablen speichern und auf einem zweiten Display (LCD1602) anzeigen.</p>
+        <center><img src="../img/lf5-thermostat-uebersicht.png" alt="uebersicht"></center>
+        <div class="spacer1">
+          
+        </div>
+        <h2 id="fb">Funktionsbeschreibung</h2>
+        <p>Mit drei LED's soll ein bestimmter Messbereich visualisiert werden. Als Messwert wird hier die Temperatur gewählt.</p>
+        <ul>
+          <li>Die blaue LED signalisiert, wenn der Messbereich unterschritteen wird. Die rote LED signalisiert, wenn ein Messbereich überschritten wird. Die grüne LED zeigt an, wenn sich der Messwert im vorgegebenen Messbereich befindet.</li>
+          <li>Der min-Wert vom Messbereich ist im Quellcode fest vorzugeben. Der max-Wert vom Messbereich wird mit dem Drehpotentiometer zur Laufzeit des Programms eingestellt. Wird der min-Wert von 20°C unterschritten, wird dies mit der blauen LED signalisiert. Wird der max-Wert von 24°C überschritten, wird dies mit der roten LED signalisiert. Der max-Wert kann in Schritten mit dem Drehpotentiometer nach unten bzw. oben verändern werden, er darf den min-Wert nicht unterschreiten.</li>
+          <li>Da es zu Testzwecken die Umgebungstemperatur der Hardware nicht beliebig verändert werden kann, erfolgt ein Unit-Test auf der Simulationsplattform Wokwi.</li>
+          <li>Wir müssen darauf achten, dass der Quellcode der Simulation auch auf dem Arduino Uno R1 laufen muss. Lediglich Der Temperatursensor DHT muss angepasst werden. Simulation = DHT22 Arduino Shield = DHT11</li>
+          <li>LCD1602-Modul soll die aktuelle Temperatur und Luftfeuchtigkeit anzeigen lassen</li>
+          <li>Optional: Es sollte überprüft werden, ob die aktuellen Werte entweder im seriellen Monitor der IDE oder in einer Excel- oder CSV-Datei übertragen werden können.</li>
+        </ul>
+        <div class="spacer1">
+          
+        </div>
+        <h2 id="ms">Modell (Schaltplan)</h2>
+        <center><img src="../img/lf5-thermostat-schaltungplan.png" alt="schaltplan"></center>
+        <center><p>Auf dem Schaltplan ist die Verkabelung der elektronischen Komponenten zu sehen. Außerdem sind dort noch andere Komponenten zu sehen, welche später zur Erweiterung des Projekts verwendet werden können.</p></center>
+        <div class="spacer1">
+          
+        </div>
+        <h2 id="qc">Quellcode</h2>
+        <pre class="">
+                <code class="language-C line-numbers" data-prismjs-copy="Copy the Code...">
+#define POTI A0//Potentiometer an Pin A0
+#define LED1 4 //LED1 rot
+#define LED2 5 //LED2 grün
+#define LED3 6 //LED3 blau
+#define LED4 7 //LED4 gelb
+                    
+//alle vier LEDs zu einem Array zusammenfassen
+//dieses ist für das Mapping später von Vorteil.
+int leds[] = {LED1, LED2, LED3, LED4};
+                    
+void setup() {
+    //setzen der LEDs als Ausgang
+    pinMode(LED1, OUTPUT);
+    pinMode(LED2, OUTPUT);
+    pinMode(LED3, OUTPUT);
+    pinMode(LED4, OUTPUT);
+}
+                    
+void loop() {
+    // Liest die Volt anzahl vom Pin A0 aus. (Die Volt anzahl wird durch ein Potentiometer eingestellt)
+    int value = analogRead(POTI);
+                    
+    // Mappt den Wert von 0-1024 auf 0-4 übersetzt vom Potentiometer auf die 4 LEDs
+    int led = map(value,0,1024,0,4);
+                    
+    // setzt die LEDs zurück bevor eine neue LED aktiviert wird.
+    resetLEDs();
+                    
+    // Aktiviert die LED die wir vorher gemappt haben.
+    digitalWrite(leds[led], HIGH);
+}
+                    
+// Hier ist die Funktion zu reseten (aus machen) der LEDs.
+void resetLEDs(){
+    digitalWrite(LED1, LOW);
+    digitalWrite(LED2, LOW);
+    digitalWrite(LED3, LOW);
+    digitalWrite(LED4, LOW);
+}
+                </code>
+            </pre>
       </div>
 
       <div class="block-menu">
-        <h1>Menu...</h1>
         <ul>
-          <li><a href="">Test 1</a></li>
-          <li><a href="">Test 1</a></li>
-          <li><a href="">Test 1</a></li>
-          <li><a href="">Test 1</a></li>
+          <li><a href="#pt">Projekt - Thermostat</a></li>
+          <ul>
+            <li><a href="#fb">Funktionsbeschreibung</a></li>
+            <li><a href="#ms">Modell (Schaltplan)</a></li>
+            <li><a href="#qc">Quellcode</a></li>
+          </ul>
         </ul>
       </div>
     </div>
