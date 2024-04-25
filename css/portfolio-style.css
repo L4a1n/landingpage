@@ -68,6 +68,9 @@ color: #446660;
   font-size: 1.3em;
   box-shadow: 0 4px 6px -6px #54ab8e;
 }
+.block-content li{
+  margin: 20px;
+}
 
 .blob a {
   color: #99d1c2;
