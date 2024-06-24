@@ -1,4 +1,4 @@
-@font-face {
+@font-face{
     font-family: 'Anonymous Pro';
     src: url(../font/AnonymousPro.ttf);
 }
@@ -36,11 +36,9 @@ color: #446660;
 .blob p{
   color: #446660
 }
-
 .block-content{
   box-sizing: border-box;
 }
-
 .block-menu{
   box-sizing: border-box;
   position: sticky;
@@ -49,19 +47,16 @@ color: #446660;
   left: 60%;
   overflow: scroll;
   height: 400px;
-
 }
 .block-menu h1{
   color: #54ab8e;
 }
-
 .block-content h1{
   color: #54ab8e;
   border-bottom: 1px solid #54ab8e;
   font-size: 1.8em;
   box-shadow: 0 4px 6px -6px #54ab8e;
 }
-
 .block-content h2{
   color: #54ab8e;
   border-bottom: 1px dashed #54ab8e;
@@ -71,22 +66,21 @@ color: #446660;
 .block-content li{
   margin: 20px;
 }
-
-.blob a {
+.blob a{
   color: #99d1c2;
   position: relative;
   text-decoration: none;
   transition: color .4s ease-out;
 }
-.blob a:hover {
+.blob a:hover{
     color: #adeddc;
     text-decoration: none;
 }
-.blob a:hover::after {
+.blob a:hover::after{
     border-color: #adeddc;
     right: 0;
 }
-.blob a::after {
+.blob a::after{
     border-radius: 1em;
     border-top: .1em solid #adeddc;
     content: "";
@@ -105,19 +99,19 @@ li{
   list-style-type: ">";
   color: #54ab8e;
 }
-.spacer1 {
+.spacer1{
     height: 10vw;
     width: max-content;
 }
-.spacer2 {
+.spacer2{
     height: 5vw;
     width: max-content;
 }
-.spacer3 {
+.spacer3{
     height: 2vw;
     width: max-content;
 }
-#back-to-top {
+#back-to-top{
     display: none;
     position: fixed;
     bottom: 1em;
@@ -128,6 +122,6 @@ li{
     cursor: pointer;
     border: none;
 }
-#back-to-top:hover {
+#back-to-top:hover{
     background-color: #7bad9d;
 }
